@@ -1,0 +1,46 @@
+.preview {
+  background: #f7f7f7;
+  width: 600px;
+  padding: 20px 0;
+  margin: 20px 30px 100px;
+}
+
+canvas {
+  margin-left: -20px;
+  width: 650px;
+  height: 650px;
+  display: block;
+  margin-top: 50px;
+}
+
+header {
+  width: 500px;
+  margin: 10px 30px;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+header h1 {
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 10px; 
+}
+
+header h1 a {
+  color: black;
+  border: none;
+  background: #b9b9b9;
+}
+
+header h1 a:hover {
+  background: magenta;
+}
+
+header a {
+  color: #151515;
+  margin-right: 5px;
+  text-decoration: none;
+  border-bottom: 4px solid cyan;
+  line-height: 0.7em;
+  display: inline-block;
+}

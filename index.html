@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Particles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Reproduction of Malevich's
+    <a href='http://www.sothebys.com/en/auctions/ecatalogue/2015/impressionist-modern-art-evening-sale-l15006/lot.18.html'>Suprematism, 18th Construction</a>
+    with particle systems
+  </h1>
+  <a href="https://github.com/fatiherikli/malevich">source code</a>
+  <a href="https://www.wikiwand.com/en/Particle_system">particle systems</a>
+  <a href="https://www.wikiwand.com/en/Kazimir_Malevich">kazimir malevich</a>
+</header>
+<div class="preview">
+  <canvas width="1300" height="1300"></canvas>
+</div>
+<script src="Vector.js"></script>
+<script src="Particle.js"></script>
+<script src="Canvas.js"></script>
+<script src="Rectangle.js"></script>
+<script src="Shape.js"></script>
+<script src="utils.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.4/dat.gui.min.js"></script>
+<script>
+  const OPTIONS = {
+    density: 1,
+    redraw: true,
+    particleSize: 2,
+    randomWalk: 0.3,
+    particleSpeed: 3,
+    stainProb: 0,
+  };
+
+  const canvas = new Canvas(
+    document.querySelector('canvas')
+  );
+
+  canvas.add(
+    new Shape(
+      '#00752b',
+      [
+        [371 * 2, 112 * 2],
+        [524 * 2, 235 * 2],
+        [475 * 2, 299 * 2],
+        [318 * 2, 180 * 2],
+        [371 * 2, 112 * 2]
+      ].map(Vector.new),
+      3000
+    )
+  );
+
+  canvas.add(
+    new Shape(
+      'black',
+      [
+        [290, 94],
+        [1188, 790],
+        [1040, 980],
+        [68, 396],
+        [290, 94]
+      ].map(Vector.new),
+      6000
+    )
+  );
+
+  canvas.add(
+    new Shape(
+      '#d0bf01',
+      [
+        [292, 542],
+        [1116, 1020],
+        [1098, 1044],
+        [246, 614],
+        [292, 542]
+      ].map(Vector.new),
+      3000
+    )
+  );
+
+  canvas.add(
+    new Shape(
+      '#4192da',
+      [
+        [322, 650],
+        [1070, 1008],
+        [1068, 1072],
+        [298, 700],
+        [322, 658],
+      ].map(Vector.new),
+      2000
+    )
+  );
+
+  canvas.add(
+    new Shape(
+      '#2422ab',
+      [
+        [536, 794],
+        [930, 994],
+        [870, 1104],
+        [468, 918],
+        [536, 794]
+      ].map(Vector.new),
+      4000
+    )
+  );
+
+  canvas.element.addEventListener('click', function (event) {
+    console.log([event.offsetX * 2, event.offsetY * 2])
+  })
+
+  canvas.start();
+
+  const gui = new dat.GUI();
+  gui.add(canvas, 'stop');
+  gui.add(canvas, 'start');
+  gui.add(OPTIONS, 'density');
+  gui.add(OPTIONS, 'redraw');
+  gui.add(OPTIONS, 'particleSpeed');
+  gui.add(OPTIONS, 'particleSize');
+  gui.add(OPTIONS, 'randomWalk');
+  gui.add(OPTIONS, 'stainProb');
+  gui.add(canvas, 'reset');
+</script>
+</body>
+</html>
