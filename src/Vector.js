@@ -58,8 +58,8 @@ class Vector {
   distance({x, y}) {
     return (
       Math.sqrt(
-          (this.x - x) ** 2 
-        + (this.y - y) ** 2
+          Math.pow(this.x - x, 2)
+        + Math.pow(this.y - y, 2)
       )
     );
   }
