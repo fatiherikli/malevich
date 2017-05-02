@@ -1,2 +1,9 @@
-# malevich
-Reproduction of Malevich's Suprematism, 18th Construction with particle systems
+# Malevich
+Reproduction of Malevich's Suprematism, 18th Construction with Particle Systems
+
+### Demo
+
+<https://fatiherikli.github.io/malevich/>
+
+### Outputs
+
